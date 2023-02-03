@@ -1,0 +1,45 @@
+@import "../style.scss";
+
+.allAnnonce {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: calc($navbarHeight - 1vh - 2px);
+}
+
+@media all and (min-width: 900px) {
+  .allAnnonce {
+    position: relative;
+    top: calc($navbarHeight * 2);
+    height: calc(100vh - ($navbarHeight * 2));
+    display: grid;
+    grid-template-columns: 20vw 80vw;
+
+    &__cardWrap {
+      // position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      overflow: scroll;
+      width: 100%;
+      .card {
+        flex-direction: column;
+        border: none;
+        width: calc(100% - 1px);
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+        transform: translateY(10%);
+        img {
+          position: relative;
+        }
+        &__header,
+        &__body {
+          border: none;
+        }
+        &__body__annonceInfo {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

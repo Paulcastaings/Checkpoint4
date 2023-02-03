@@ -1,0 +1,19 @@
+.nav {
+height: 50px;
+background: linear-gradient(45deg, rgb(76, 14, 156), rgb(5, 5, 78));
+}
+.navBar {
+    list-style-type: none;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+
+
+&__item {
+    cursor: pointer;
+    line-height: 55px;
+
+    margin-right: 20px;
+    color: #f1f1f1;
+}}

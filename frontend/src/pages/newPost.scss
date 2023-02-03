@@ -1,0 +1,217 @@
+@import "../style.scss";
+
+.headBannerPost {
+  position: fixed;
+  width: 100vw;
+  height: 5vh;
+  background-color: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  * {
+    font-family: $fontMain;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 100;
+  }
+}
+
+.newPost {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
+  margin-bottom: 28vh;
+
+  &__titlePost {
+    border-radius: $black solid 1px;
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+  &__allSelect {
+    width: 100vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+    & select {
+      width: 75vw;
+      background: $bgColor;
+      border: 1px solid $black;
+      border-radius: 5px;
+    }
+  }
+
+  &__description {
+    width: 100vw;
+    height: 18vh;
+    border-bottom: 1px solid $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__adDescription {
+    color: $black;
+    border: none;
+    border-bottom: 1px solid;
+    padding: 0.5rem;
+    background-color: $bgColor;
+    outline: none;
+    width: 70vw;
+    height: 4vh;
+    font-family: $fontMain;
+  }
+  &__picture {
+    width: 100vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+    border-bottom: $black solid 1px;
+    margin-top: 8vh;
+  }
+  &__adPicture {
+    width: 40vw;
+    height: auto;
+  }
+  &__uploadBtn {
+    text-align: center;
+    line-height: 63px;
+    font-size: $fontButton;
+    color: $black;
+    padding: 0.3vh 5vw;
+    margin: auto;
+    margin-top: 4vh;
+    background-color: rgb(221, 218, 213);
+    border-color: yellowgreen;
+    cursor: pointer;
+    font-family: "Arimo";
+  }
+  &__publish {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__btn {
+    text-align: center;
+    color: $white;
+    margin: auto;
+    margin-top: 3vh;
+    margin-bottom: 5vh;
+    padding: 0.3vh 9vw;
+    background-color: $black;
+    font-size: $fontButton;
+    font-family: "Arimo";
+    cursor: pointer;
+    padding: 5vw;
+  }
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  & input {
+    color: $black;
+    border: none;
+    border-bottom: 1px solid;
+    padding: 0.5rem;
+    background-color: $bgColor;
+    outline: none;
+    width: 70vw;
+  }
+}
+
+@media all and (min-width: 900px) {
+  .background {
+    height: 100vh;
+    background-image: url("../assets/photo/BgAddPost.jpg");
+    background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover
+
+  }
+  .newPost {
+    position: relative;
+    background-size: auto;
+        top: calc(16vh + 1px);
+    height: 60vh;
+    &__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-self: center;
+      width: 100vw;
+    }
+    &__titlePost {
+      flex-direction: column;
+      align-items: center;
+      justify-self: center;  
+      width: calc(50vw - 1px);
+      height: 20vh;
+      & input {
+        width: 30vw;
+      }
+    }
+    &__allSelect {
+      width: calc(50vw - 1px);
+      height: 34vh;
+      gap: 2rem;
+      & select {
+        width: 31vw;
+        height: 3.5vh;
+        padding: 2px;
+      }
+    }
+    &__description {
+      width: calc(50vw - 1px);
+      height: 29.6vh;
+    }
+    &__adDescription {
+      color: $black;
+      padding: 0.5rem;
+      width: 30vw;
+      height: 2vh;
+      font-family: $fontMain;
+      background-color:aliceblue;
+    }
+    &__picture {
+      width: calc(50vw - 1px);
+      border: none;
+      height: calc(46vh + 1px);
+    }
+    &__adPicture {
+      width: 25vw;
+      height: 25vh;
+      margin-top: 2vh;
+      
+    }
+    &__uploadBtn {
+      line-height: 48px;
+      padding: 0.5vh 2vw;
+      background-color: transparent;
+      border: 1px solid gray;
+      color: rgb(57, 11, 172);
+    }
+    &__btn {
+      padding: 1.5vh 2vw;
+      background-color: transparent;
+      border: 1px solid gray;
+      color: rgb(57, 11, 172);
+
+    }
+    &__publish {
+      width: calc(50vw - 1px);
+    }
+  }
+}

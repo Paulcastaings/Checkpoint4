@@ -1,36 +1,33 @@
-import Counter from "../components/Counter";
-import logo from "../assets/logo.svg";
+import "./home.scss";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Navbar from "../components/NavBar";
+import Card from "../components/Card";
 
-export default function Home() {
+function Home() {
+  const [allPosts, setAllPosts] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/api/post/allpost?country=all`)
+      .then((response) => {
+        setAllPosts(response.data);
+      })
+      .catch((error) => console.error("ERROR", error));
+  }, []);
+
   return (
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React !</p>
-
-      <Counter />
-
-      <p>
-        Edit <code>App.jsx</code> and save to test HMR updates.
-      </p>
-      <p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        {" | "}
-        <a
-          className="App-link"
-          href="https://vitejs.dev/guide/features.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Vite Docs
-        </a>
-      </p>
-    </header>
+    <div>
+      <Navbar />
+      <div className="allAnnonce__cardWrap">
+        {allPosts.length > 0 ? (
+          allPosts.map((post) => <Card key={post.id} post={post} />)
+        ) : (
+          <h2>There's no ad </h2>
+        )}
+      </div>
+    </div>
   );
 }
+
+export default Home;
