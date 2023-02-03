@@ -1,9 +1,6 @@
 /* eslint-disable no-return-assign */
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
-// import Navbar from "../components/Navbar";
-// import BottomNav from "../components/BottomNav";
 import { useUser } from "../userContext";
 import "./newPost.scss";
 import NavBar from "../components/NavBar";
